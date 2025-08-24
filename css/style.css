@@ -1,0 +1,353 @@
+@import url(../../plugin/bootstrap/css/bootstrap.min.css);
+@import url(../../plugin/bootstrap/icons/bootstrap-icons.css);
+@import url(../../plugin/owl-carousel/css/owl.carousel.min.css);
+@import url(../../plugin/magnific/magnific-popup.css);
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap");
+
+
+/* ------------------------------
+    Theme Variables (CSS Custom Properties)
+------------------------------ */
+
+:root {
+  /* Colors */
+  --project-bg-color: #EAF2F8;
+  --body-bg-color: #0D1B2A;
+  --nav-bg-color: #0D1B2A;
+  --text-color: #ffffff;
+  --nav-hover-bg: rgba(255, 255, 255, 0.1);
+  --button-border: #17c3b2;
+  --button-color: #17c3b2;
+  --button-hover-color: #121212;
+  --card-bg: #04223a;
+  --footer-bg: #162d40;
+  --contact-bg: #04223a;
+  --contact-border: rgb(129, 125, 125);
+  --social-border: rgb(14, 134, 149);
+  --social-icon-color: white;
+  --text-font: 'Inter', sans-serif;
+  --title-font: 'Outfit', sans-serif;
+  --nav-link-bg-color: #fff;
+  --fill-color: #172433;
+  --about-bg: #172433;
+  --card-bg: #1a1a1a;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* Light Theme Overrides */
+body.light-theme {
+  --project-bg-color: #3b5cfd;
+  --nav-link-bg-color: #08ed77;
+  --nav-bg-color: #fff;
+  --body-bg-color: #EAF2F8;
+  --text-color: #0D1B2A;
+  --heading-color: #002B5B;
+  --subheading-color: #195B8E;
+  --paragraph-color: #1F3A52;
+  --nav-hover-bg: rgba(0, 0, 0, 0.05);
+  --button-hover-bg: #17c3b2;
+  --button-hover-color: #ffffff;
+  --card-bg: #f9f9f9;
+  --footer-bg: #eaeaea;
+  --contact-bg: #f2f2f2;
+  --contact-border: #ccc;
+  --social-icon-color: #000000;
+  --text-font: 'Inter', sans-serif;
+  --title-font: 'Outfit', sans-serif;
+  --fill-color: #fff;
+  --about-bg: #fff;
+  --card-bg: #1a1a1a;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold !important;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.muted-text {
+  color: var(--text);
+  opacity: 0.5;
+}
+
+.svg path {
+  fill: var(--fill-color);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--body-bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+.navb {
+  background: var(--nav-bg-color);
+  color: var(--text-color);
+}
+
+.service .card {
+  background-color: var(--card-bg-light);
+  color: var(--card-text-light);
+  transition: all 0.3s ease;
+  border-radius: 1rem;
+  box-shadow: 0 5px 20px var(--card-shadow-light);
+}
+
+.service .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px var(--card-shadow-light);
+}
+
+.counter {
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.project-slider-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.project-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.card-wrapper {
+  flex: 0 0 25%;
+  /* Shows 4 cards */
+  box-sizing: border-box;
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 8px 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.title {
+  color: #08ed77;
+}
+
+.bg-color {
+  background: #08ed77;
+}
+
+/* .name{
+  font-size: 3.5em;
+} */
+.navbar-nav .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: var(--nav-link-bg-color);
+  color: var(--body-bg-color);
+}
+
+.home-avatar-box {
+  position: relative;
+  overflow: visible;
+}
+
+.home-avatar-box img {
+  animation: floatUpDown 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes floatUpDown {
+
+  0%,
+  100% {
+    transform: translateY(10);
+  }
+
+  50% {
+    transform: translateY(-50px);
+  }
+}
+
+.nav-tabs .nav-link {
+  background: transparent;
+  color: var(--text-color);
+  border: none;
+  border-bottom: 2px solid var(--highlight-color);
+  font-weight: 600;
+}
+
+.about,
+.service,
+.footer {
+  background: var(--about-bg);
+}
+
+#services i {
+  font-size: 5.5rem;
+}
+
+#social a {
+  /* padding: 20px; */
+  border: 2px solid rgb(14, 134, 149);
+}
+
+#social a i {
+  font-size: 6rem;
+}
+
+.contact-block {
+  /* background: #04223a; */
+  border: 1px solid rgb(129, 125, 125);
+}
+
+.contact-block input {
+  border: none;
+  padding: 15px 10px;
+  outline: none;
+}
+
+.contact-block textarea {
+  outline: none;
+}
+
+
+.social-link {
+  top: 60%;
+  padding: 20px;
+}
+
+.social-link a:hover {
+  border-radius: 10px;
+}
+
+.social-link a i {
+  font-size: 3.5rem;
+  padding: 25px 10px;
+  color: white !important;
+}
+
+#projects {
+  border-radius: 30px;
+  /* background: var(--project-bg-color); */
+  color: var;
+}
+
+.img-ani {
+  overflow: hidden;
+  padding: 15px;
+  height: 80%;
+  border-radius: 10px;
+}
+
+.img-ani img {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.img-ani img:hover {
+  transition: 0.9s ease;
+  transform: scale(1.3);
+}
+
+#projects .card {
+  height: 60vh;
+  border-radius: 10px;
+  background: var(--body-bg-color);
+}
+
+#projects .card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
+}
+
+
+.px-btn {
+  display: inline-block;
+  margin: 0px 5px;
+  text-decoration: none;
+  padding: 15px 30px;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.c-btn {
+  background: #fff;
+  color: black;
+}
+
+.h-btn {
+  background: #08ed77;
+}
+
+
+.info-item {
+  background: #fff;
+  border-radius: 20px;
+}
+
+.project-card {
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: var(--body-bg-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.project-img {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
