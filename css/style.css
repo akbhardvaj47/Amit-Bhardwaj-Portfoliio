@@ -8,10 +8,7 @@
 /* ------------------------------
     Theme Variables (CSS Custom Properties)
 ------------------------------ */
-
 :root {
-  /* Colors */
-  --project-bg-color: #EAF2F8;
   --body-bg-color: #0D1B2A;
   --nav-bg-color: #0D1B2A;
   --text-color: #ffffff;
@@ -19,7 +16,7 @@
   --button-border: #17c3b2;
   --button-color: #17c3b2;
   --button-hover-color: #121212;
-  --card-bg: #04223a;
+  --card-bg: #1a1a1a;
   --footer-bg: #162d40;
   --contact-bg: #04223a;
   --contact-border: rgb(129, 125, 125);
@@ -30,16 +27,12 @@
   --nav-link-bg-color: #fff;
   --fill-color: #172433;
   --about-bg: #172433;
-  --card-bg: #1a1a1a;
-  --card-shadow: rgba(0, 0, 0, 0.5);
+  --service-shadow: #ffffff;
 }
 
-/* Light Theme Overrides */
 body.light-theme {
-  --project-bg-color: #3b5cfd;
-  --nav-link-bg-color: #08ed77;
-  --nav-bg-color: #fff;
   --body-bg-color: #EAF2F8;
+  --nav-bg-color: #fff;
   --text-color: #0D1B2A;
   --heading-color: #002B5B;
   --subheading-color: #195B8E;
@@ -52,12 +45,10 @@ body.light-theme {
   --contact-bg: #f2f2f2;
   --contact-border: #ccc;
   --social-icon-color: #000000;
-  --text-font: 'Inter', sans-serif;
-  --title-font: 'Outfit', sans-serif;
+  --nav-link-bg-color: #08ed77;
   --fill-color: #fff;
   --about-bg: #fff;
-  --card-bg: #1a1a1a;
-  --card-shadow: rgba(0, 0, 0, 0.1);
+  --service-shadow: #14c165;
 }
 
 h1,
@@ -89,8 +80,7 @@ body {
   background-color: var(--body-bg-color);
   color: var(--text-color);
   line-height: 1.6;
-  font-size: 16px;
-  scroll-behavior: smooth;
+  font-size: 14px;
 }
 
 .navb {
@@ -111,13 +101,18 @@ body {
   box-shadow: 0 10px 30px var(--card-shadow-light);
 }
 
+#aboutTabs {
+  background: #c3a904;
+  border-radius: 10px 30px;
+}
+
 .counter {
   font-weight: 700;
   transition: all 0.3s ease;
 }
 
 .project-slider-container {
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 100%;
 }
 
@@ -126,14 +121,16 @@ body {
   overflow-x: auto;
   scroll-behavior: smooth;
 }
+.project-card{
+  height: 18rem;
+}
 
 ::-webkit-scrollbar {
   display: none;
 }
 
 .card-wrapper {
-  flex: 0 0 25%;
-  /* Shows 4 cards */
+  flex: 0 0 33%;
   box-sizing: border-box;
 }
 
@@ -152,6 +149,26 @@ body {
 
 .bg-color {
   background: #08ed77;
+}
+
+
+.c-btn {
+  background: #fff;
+  color: black !important;
+}
+
+.c-btn:hover {
+  background: #08ed77;
+  color: white !important;
+}
+
+.h-btn {
+  background: #08ed77;
+}
+
+.h-btn:hover {
+  background: #fff;
+  color: #000000;
 }
 
 /* .name{
@@ -191,8 +208,6 @@ body {
 .nav-tabs .nav-link {
   background: transparent;
   color: var(--text-color);
-  border: none;
-  border-bottom: 2px solid var(--highlight-color);
   font-weight: 600;
 }
 
@@ -202,54 +217,65 @@ body {
   background: var(--about-bg);
 }
 
-#services i {
-  font-size: 5.5rem;
+#service i {
+  font-size: 3rem;
+}
+
+#service>.row>div>div {
+  border: 1px solid #fff;
+  border-radius: 50px 10px;
+}
+
+
+
+#social {
+  margin-top: 20px;
 }
 
 #social a {
-  /* padding: 20px; */
   border: 2px solid rgb(14, 134, 149);
 }
 
 #social a i {
-  font-size: 6rem;
+  font-size: 2rem;
 }
 
 .contact-block {
-  /* background: #04223a; */
-  border: 1px solid rgb(129, 125, 125);
+  /* border: 1px solid rgb(129, 125, 125); */
+  background: var(--about-bg);
 }
 
 .contact-block input {
   border: none;
-  padding: 15px 10px;
+  padding: 20px 10px 5px 10px;
   outline: none;
+  border-bottom: 2px solid var(--contact-border)!important;
+  color: var(--text-color);
 }
 
 .contact-block textarea {
+  padding: 20px 10px 0px 10px;
   outline: none;
+  border-bottom: 2px solid var(--contact-border)!important;
+
 }
 
 
 .social-link {
-  top: 60%;
-  padding: 20px;
-}
-
-.social-link a:hover {
-  border-radius: 10px;
+  position: absolute;
+  top: 55%;
+  left: 2%;
 }
 
 .social-link a i {
-  font-size: 3.5rem;
-  padding: 25px 10px;
+  padding: 0px 5px;
+  border-radius: 10px;
+  font-size: 2rem;
   color: white !important;
 }
 
 #projects {
   border-radius: 30px;
-  /* background: var(--project-bg-color); */
-  color: var;
 }
 
 .img-ani {
@@ -293,14 +319,6 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.c-btn {
-  background: #fff;
-  color: black;
-}
-
-.h-btn {
-  background: #08ed77;
-}
 
 
 .info-item {
@@ -311,8 +329,11 @@ body {
 .project-card {
   border-radius: 15px;
   overflow: hidden;
-  background-color: var(--body-bg-color);
+  background-color: var(--about-bg);
+  color: var(--text-color)!important;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 0px 5px 2px var(--service-shadow);
+
 }
 
 .project-card:hover {
@@ -322,7 +343,7 @@ body {
 
 .project-img {
   position: relative;
-  height: 220px;
+  height: 150px;
   overflow: hidden;
 }
 
@@ -351,3 +372,47 @@ body {
 .project-card:hover .overlay {
   opacity: 1;
 }
+
+.address {
+  box-shadow: 0px 0px 10px 1px var(--service-shadow);
+}
+
+.address a {
+  color: var(--text-color);
+}
+
+#services .card {
+  background: var(--about-bg);
+  color: var(--text-color);
+  transition: 0.5s ease-in-out;
+  box-shadow: 0px 0px 5px 2px var(--service-shadow);
+}
+#services .card:hover{
+  box-shadow: 0px 0px 5px 2px #e949e4;
+}
+.footer-link{
+  color: var(--text-color);
+}
+.social-icon {
+        font-size: 1.5rem;
+        color: #333;
+        transition: color 0.3s, transform 0.3s;
+        text-decoration: none;
+    }
+
+    .social-icon:hover {
+        color: #0d6efd; /* Bootstrap primary color */
+        transform: scale(1.2);
+    }
+
+    /* Optional: Icon colors per brand */
+    .bi-facebook:hover { color: #3b5998; }
+    .bi-twitter:hover { color: #1da1f2; }
+    .bi-instagram:hover { color: #e1306c; }
+    .bi-github:hover { color: #333; }
+
+    @media (max-width: 991.98px) {
+        .text-lg-end {
+            text-align: center !important;
+        }
+    }

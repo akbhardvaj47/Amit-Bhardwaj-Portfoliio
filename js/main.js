@@ -1,24 +1,27 @@
-const toggleBtn = document.getElementById('theme-toggle');
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleBtn = document.getElementById('theme-toggle');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const savedTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
 
-  document.body.classList.toggle('light-theme', savedTheme === 'light');
-  toggleBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+  if (toggleBtn) {
+    document.body.classList.toggle('light-theme', savedTheme === 'light');
+    toggleBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
 
-  toggleBtn.addEventListener('click', () => {
-    const isLight = document.body.classList.toggle('light-theme');
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    toggleBtn.textContent = isLight ? '🌙' : '☀️';
-  });
-
+    toggleBtn.addEventListener('click', () => {
+      const isLight = document.body.classList.toggle('light-theme');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      toggleBtn.textContent = isLight ? '🌙' : '☀️';
+    });
+  } else {
+    console.warn("Element with ID 'theme-toggle' not found.");
+  }
+  // Counter Animation
   const counters = document.querySelectorAll('.counter');
-
   counters.forEach(counter => {
     const updateCount = () => {
       const target = +counter.getAttribute('data-target');
       const count = +counter.innerText;
-      const speed = 200; // smaller = faster
-
+      const speed = 200;
       const increment = target / speed;
 
       if (count < target) {
@@ -28,30 +31,39 @@ const toggleBtn = document.getElementById('theme-toggle');
         counter.innerText = target + '+';
       }
     };
-
     updateCount();
   });
 
+  // Project Slider Scroll
+  const slider = document.getElementById('projectSlider');
+  const leftBtn = document.getElementById('scrollLeft');
+  const rightBtn = document.getElementById('scrollRight');
 
- document.addEventListener("DOMContentLoaded", function () {
-    const slider = document.getElementById('projectSlider');
-    const leftBtn = document.getElementById('scrollLeft');
-    const rightBtn = document.getElementById('scrollRight');
+  const card = slider?.querySelector('.card-wrapper');
 
-    const card = slider.querySelector('.card-wrapper');
+  if (!slider || !card) {
+    console.error('Slider or card not found');
+    return;
+  }
 
-    if (!slider || !card) {
-      console.error('Slider or card not found');
-      return;
-    }
+  const scrollAmount = card.offsetWidth + 16;
 
-    const scrollAmount = card.offsetWidth + 16;
+  leftBtn?.addEventListener('click', () => {
+    slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
 
-    leftBtn.addEventListener('click', () => {
-      slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    });
-
-    rightBtn.addEventListener('click', () => {
-      slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    });
+  rightBtn?.addEventListener('click', () => {
+    slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+            new Typed("#typed-text", {
+                strings: ["Web Developer", "UI/UX Designer", "Freelancer", "Frontend Developer", "Backend Developer"],
+                typeSpeed: 80,
+                backSpeed: 50,
+                backDelay: 1500,
+                loop: true
+            });
+        });
