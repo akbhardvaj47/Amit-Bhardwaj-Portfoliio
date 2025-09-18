@@ -35,26 +35,26 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Project Slider Scroll
-  const slider = document.getElementById('projectSlider');
-  const leftBtn = document.getElementById('scrollLeft');
-  const rightBtn = document.getElementById('scrollRight');
+  // const slider = document.getElementById('projectSlider');
+  // const leftBtn = document.getElementById('scrollLeft');
+  // const rightBtn = document.getElementById('scrollRight');
 
-  const card = slider?.querySelector('.card-wrapper');
+  // const card = slider?.querySelector('.card-wrapper');
 
-  if (!slider || !card) {
-    console.error('Slider or card not found');
-    return;
-  }
+  // if (!slider || !card) {
+  //   console.error('Slider or card not found');
+  //   return;
+  // }
 
-  const scrollAmount = card.offsetWidth + 16;
+  // const scrollAmount = card.offsetWidth + 16;
 
-  leftBtn?.addEventListener('click', () => {
-    slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  });
+  // leftBtn?.addEventListener('click', () => {
+  //   slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  // });
 
-  rightBtn?.addEventListener('click', () => {
-    slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  });
+  // rightBtn?.addEventListener('click', () => {
+  //   slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  // });
 });
 
 
